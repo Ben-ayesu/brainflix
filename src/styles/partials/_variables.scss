@@ -1,0 +1,65 @@
+// Screen variables
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+// Primary colors
+$primary-brainflix-black: #323232;
+$primary-brainflix-blue: #0095FF;
+$primary-silver: #AFAFAF;
+$primary-white: #FFFFFF;
+
+// Secondary colors
+$secondary-brainflix-darkblack: #000000;
+$primary-brainflix-darkblue: #0095FF;
+$secondary-mercury: #E1E1E1;
+$secondary-alabaster: #FAFAFA;
+
+// Padding
+$default-padding: 1rem;
+$double-default-padding: 2rem;
+
+$mb-padding-before-headline: 1.5rem;
+$mb-padding-after-headline: 1rem;
+$mb-padding-between-components: 1rem;
+
+$dt-padding-before-headline: 2.25rem;
+$dt-padding-after-headline: 1.5rem;
+$dt-padding-between-components: 1.5rem;
+
+// Text weight
+$bold: 700;
+$demi: 600;
+$regular: 400;
+
+// Desktop and Tablet (dt) Text size and Line Heights
+$dt-page-header-text-size: 2.0625rem;
+$dt-page-header-line-height: 2.75rem;
+
+$dt-section-header-text-size: .75rem;
+$dt-section-header-line-height: 1.25rem;
+
+$dt-subheader-text-size: .875rem;
+$dt-subheader-line-height: 1.375rem;
+
+$dt-body-copy-text-size: .875rem;
+$dt-body-copy-line-height: 1.375rem;
+
+$dt-label-button-text-size: 0.75rem;
+$dt-label-button-line-height: 1.25rem;
+
+// Mobile Styles (mb)
+$mb-page-header-text-size: 1.5rem;   
+$mb-page-header-line-height: 2rem;
+
+$mb-section-header-text-size: .75rem;
+$mb-section-header-line-height: 1.25rem;
+
+$mb-subheader-text-size: .8125rem;
+$mb-subheader-line-height: 1.125rem; 
+
+$mb-body-copy-text-size: .8125rem;
+$mb-body-copy-line-height: 1.125rem; 
+
+$mb-label-button-text-size: .625rem;
+$mb-label-button-line-height: 1.25rem;
+
