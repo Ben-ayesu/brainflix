@@ -1,19 +1,19 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin text-style($font-size, $line-height, $weight) {
-    font-size: $font-size;
-    line-height: $line-height;
-    font-weight: $weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $weight;
 }
 
 @mixin tablet {
-    @media (min-width: $tablet-width) {
-        @content;
-    }
+  @media (min-width: $tablet-width) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: $desktop-width) {
-        @content;
-    }
+  @media (min-width: $desktop-width) {
+    @content;
+  }
 }

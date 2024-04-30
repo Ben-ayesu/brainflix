@@ -1,8 +1,21 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 * {
-    display: flex;
-    box-sizing: border-box;
+  display: flex;
+  box-sizing: border-box;
 }
 
-
+button {
+  background-color: $primary-brainflix-blue;
+  color: $primary-white;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  @include Tablet {
+    width: 9.375rem;
+  }
+}
+:hover {
+  background-color: $secondary-brainflix-darkblue;
+  color: $primary-white;
+}
