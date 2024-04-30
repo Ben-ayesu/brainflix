@@ -1,7 +1,7 @@
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
-import "../../styles/partials/_global.scss";
+import "../../styles/App.scss";
 
 const Header = () => {
   return (
@@ -25,6 +25,8 @@ const Header = () => {
       <button className="header__btn" id="upload">
         Upload
       </button>
+      {/* Avatar tablet */}
+      <img src={avatar} alt="Mohan-muruge" className="header__avatar-tablet" />
     </header>
   );
 };
