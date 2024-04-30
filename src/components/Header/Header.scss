@@ -5,9 +5,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   // Header Image
   &__img {
     max-height: 1.5625rem;
     max-width: 7.5rem;
+  }
+  // Header Input
+  &__input {
+    width: 100%;
   }
 }
