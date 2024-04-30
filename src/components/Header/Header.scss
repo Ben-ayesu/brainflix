@@ -7,19 +7,25 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  @include tablet {
+    flex-direction: row;
+  }
+
   // Header Image
   &__img {
     max-height: 1.5625rem;
     max-width: 7.5rem;
   }
+
+  // Header Input
+  &__input {
+    width: 100%
+  }
+  
   // Header Search
   &__search-mobile {
     display: flex;
     flex-direction: row;
-    width: 100%;
-  }
-  // Header Input
-  &__input {
     width: 100%;
   }
   // Header Avatar

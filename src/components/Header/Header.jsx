@@ -12,6 +12,7 @@ const Header = () => {
       </a>
       {/* Search box */}
       <div className="header__search-mobile">
+        <i className="header__icon"></i>
         <input
           className="header__input"
           type="search"
