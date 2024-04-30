@@ -1,4 +1,5 @@
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
 import "../../styles/partials/_global.scss";
 
@@ -10,12 +11,15 @@ const Header = () => {
         <img src={logo} alt="BrainFlix Logo" className="header__img" />
       </a>
       {/* Search box */}
-      <input
-        className="header__input"
-        type="search"
-        id="search"
-        placeholder="Search"
-      />
+      <div className="header__search-mobile">
+        <input
+          className="header__input"
+          type="search"
+          id="search"
+          placeholder="Search"
+        />
+        <img src={avatar} alt="Mohan-muruge" className="header__avatar" />
+      </div>
       {/* Button */}
       <button className="header__btn" id="upload">
         Upload
