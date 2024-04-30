@@ -1,10 +1,13 @@
-import "./App.scss";
+import logo from "./assets/Logo/BrainFlix-logo.svg";
+import "./styles/App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <h2>Hello world</h2>
-    </div>
+    <header className="header">
+      <a href="google.com/#blank" className="header__logo">
+        <img src={logo} alt="BrainFlix Logo" className="header__img" />
+      </a>
+    </header>
   );
 }
 

@@ -1,8 +1,8 @@
 @use "./variables" as *;
-@use "./mixins" as *;
-@use "./fonts" as *;
 
-
-
+* {
+    display: flex;
+    box-sizing: border-box;
+}
 
 
