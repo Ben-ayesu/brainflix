@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    max-height: 1.5625rem;
+    max-width: 7.5rem;
+  }
+}
