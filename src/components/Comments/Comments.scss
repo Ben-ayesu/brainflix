@@ -1,27 +1,76 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+
 .comments {
     display: flex;
     flex-direction: column;
     margin: $default-padding;
     gap: $default-padding;
+    @include tablet {
+        margin: $default-padding $double-default-padding;
+    }
 
     &__form-container {
         display: flex;
         flex-direction: row;
+        @include tablet {
+            align-items: flex-end;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding-left: $default-padding;
         @include tablet {
             flex-direction: row;
         }
     }
 
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet {
+            width: 100%;
+            padding-right: $default-padding;
+        }
+    }
+
+    &__label {
+        padding-bottom: .5rem;
+    }
+
+    &__input {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        @include tablet {
+            padding-bottom: 1.75rem;
+            width: 100%;
+            height: 1rem;
+        }
+    }
+
     &__btn {
+        background-image: url("../../assets/Icons/add_comment.svg");
+        background-repeat: no-repeat;
+        background-position: 10px 6px;
+        padding: 12px 20px 12px 40px;
+        margin-top: 1rem;
         border-bottom: 1px solid $secondary-mercury;
+        align-self: flex-end;
+    }
+}
+
+.avatar-comments {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    @include tablet {
+        border-radius: 50%;
+        width: 2.25rem;
+        height: 2.25rem;
     }
 }

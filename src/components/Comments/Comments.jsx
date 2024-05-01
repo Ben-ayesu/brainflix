@@ -1,3 +1,4 @@
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Comments.scss";
 import "../../styles/App.scss";
 
@@ -6,18 +7,19 @@ const Comments = () => {
     <section className="comments">
       <p className="comments__count">3 Comments</p>
       <div className="comments__form-container">
-        <img src="#" alt="Mohan Muruge" className="comments__avatar" />
+        <img src={avatar} alt="Mohan Muruge" className="avatar-comments" />
         <form action="" className="comments__form">
-          <label className="comments__label" htmlFor="comments_input">
-            Join the Conversation
-          </label>
-          <textarea
-            name="comments_input"
-            rows="3"
-            className="comments_input"
-            placeholder="Add a new comment"
-          ></textarea>
-          <button className="comments_btn">Comment</button>
+          <div className="comments__input-container">
+            <label className="comments__label" htmlFor="comments_input">
+              Join the Conversation
+            </label>
+            <textarea
+              rows="3"
+              className="comments__input"
+              placeholder="Add a new comment"
+            ></textarea>
+          </div>
+          <button className="comments__btn">Comment</button>
         </form>
       </div>
     </section>

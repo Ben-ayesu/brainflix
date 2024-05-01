@@ -35,3 +35,24 @@ button {
     width: 9.375rem;
   }
 }
+
+  // Avatar
+  .avatar {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  // Avatar Tablet
+  .avatar-tablet {
+    display: none;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    @include tablet {
+      display: flex;
+    }
+  }
