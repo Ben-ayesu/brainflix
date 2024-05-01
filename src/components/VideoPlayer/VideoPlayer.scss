@@ -11,6 +11,9 @@
     // Wraps title, author, likes, description
     &__details-wrapper {
         margin: $default-padding;
+        @include tablet {
+            margin: $double-default-padding;
+        }
     }
 
     &__title {
@@ -25,6 +28,7 @@
     &__metadata {
         display: flex;
         flex-direction: row;
+        color: $primary-silver;
         padding: $default-padding 0;
         border-bottom: 1px solid $secondary-mercury;
         border-top: 1px solid $secondary-mercury;
@@ -38,12 +42,31 @@
         }
     }
 
+    &__channel {
+        color: $primary-brainflix-black;
+        padding-bottom: 0.5rem;
+        padding-right: $double-default-padding;
+    }
+
     &__views-likes {
         width: 50%;
         @include tablet {
             display: flex;
             flex-direction: row;
+            justify-content: end;
         }
+    }
+
+    &__icon {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/Icons/views.svg");
+        margin-right: 1rem;
+    }
+
+    &__views {
+        padding-bottom: 0.5rem;
+        padding-right: $double-default-padding;
     }
 
     &__description {
