@@ -2,5 +2,52 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-player {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // Video player
+    &__media {
+        width: 100%;
+    }
+    // Wraps title, author, likes, description
+    &__details-wrapper {
+        margin: $default-padding;
+    }
+
+    &__title {
+        padding-bottom: $default-padding;
+        @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
+        
+        @include tablet {
+            @include text-style($dt-page-header-text-size, $dt-page-header-line-height);
+        }
+    }
+
+    &__metadata {
+        display: flex;
+        flex-direction: row;
+        padding: $default-padding 0;
+        border-bottom: 1px solid $secondary-mercury;
+        border-top: 1px solid $secondary-mercury;
+    }
+
+    &__channel-date {
+        width: 50%;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__views-likes {
+        width: 50%;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__description {
+        padding-top: $default-padding;
+    }
+
 }

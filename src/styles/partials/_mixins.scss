@@ -1,9 +1,8 @@
 @use "./variables" as *;
 
-@mixin text-style($font-size, $line-height, $weight) {
+@mixin text-style($font-size, $line-height) {
   font-size: $font-size;
   line-height: $line-height;
-  font-weight: $weight;
 }
 
 @mixin tablet {
