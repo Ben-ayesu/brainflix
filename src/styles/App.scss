@@ -25,17 +25,6 @@ p {
   }
 }
 
-button {
-  background-color: $primary-brainflix-blue;
-  color: $primary-white;
-  height: 2.5rem;
-  border-radius: 0.25rem;
-  width: 100%;
-  @include tablet {
-    width: 9.375rem;
-  }
-}
-
   // Avatar
   .avatar {
     border-radius: 50%;

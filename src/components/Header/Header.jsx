@@ -1,5 +1,6 @@
 import "./Header.scss";
 import "../../styles/App.scss";
+import Button from "../Button/Button";
 
 const Header = (props) => {
   return (
@@ -20,9 +21,7 @@ const Header = (props) => {
         <img src={props.avatar} alt="Mohan-muruge" className="avatar" />
       </div>
       {/* Button */}
-      <button className="header__btn" id="upload">
-        Upload
-      </button>
+      <Button text="Upload"></Button>
       {/* Avatar tablet */}
       <img src={props.avatar} alt="Mohan-muruge" className="avatar-tablet" />
     </header>
