@@ -1,0 +1,27 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    margin: $default-padding;
+    gap: $default-padding;
+
+    &__form-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__btn {
+        border-bottom: 1px solid $secondary-mercury;
+    }
+}
