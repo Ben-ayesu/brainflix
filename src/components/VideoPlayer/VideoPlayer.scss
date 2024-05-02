@@ -4,6 +4,7 @@
 .video-player {
     display: flex;
     flex-direction: column;
+    background-color: $secondary-brainflix-darkblack;
     // Video player
     &__media {
         width: 100%;
