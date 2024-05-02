@@ -2,7 +2,7 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Comments.scss";
 import "../../styles/App.scss";
 
-const Comments = () => {
+const Comments = (props) => {
   return (
     <section className="comments">
       <p className="comments__count">3 Comments</p>

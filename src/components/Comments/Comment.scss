@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+    display: flex;
+    border-bottom: 1px solid $secondary-mercury;
+    margin-bottom: $default-padding;
+    &__content {
+        margin-left: 1rem;
+        width: 90%;
+        flex-grow: 1;
+      }
+      
+    &__name-date {
+        display: flex;
+        justify-content: space-between;
+      } 
+      
+    &__name {
+        font-weight: $font-weight-demi;
+      }
+      
+    &__date {
+        color: $primary-silver;
+        font-weight: $font-weight-regular;
+      }
+      
+    &__detail {
+        font-weight: $font-weight-regular;
+      }
+  }
+  
