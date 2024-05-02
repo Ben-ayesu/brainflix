@@ -22,12 +22,14 @@ const VideoPlayer = () => {
             <h3 className="video-player__date">8/8/2023</h3>
           </div>
           <div className="video-player__views-likes">
-            <h3 className="video-player__views">
-              <i className="video-player__icon"></i>980,544
-            </h3>
-            <h3 className="video-player__likes">
-              <i className="video-player__icon"></i>22,479
-            </h3>
+            <div className="video-player__views-container">
+              <i className="video-player__icon-views"></i>
+              <h3 className="video-player__views">980,544</h3>
+            </div>
+            <div className="video-player__likes-container">
+              <i className="video-player__icon-likes"></i>
+              <h3 className="video-player__likes">22,479</h3>
+            </div>
           </div>
         </div>
         <p className="video-player__description">
