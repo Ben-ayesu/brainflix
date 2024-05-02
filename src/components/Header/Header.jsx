@@ -1,6 +1,6 @@
+import Button from "../Button/Button";
 import "./Header.scss";
 import "../../styles/App.scss";
-import Button from "../Button/Button";
 
 const Header = (props) => {
   return (

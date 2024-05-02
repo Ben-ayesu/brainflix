@@ -13,4 +13,7 @@ button {
     @include tablet {
       width: 9.375rem;
     }
+    &:hover {
+      background-color: $secondary-brainflix-darkblue;
+    }
   }

@@ -9,7 +9,11 @@
   gap: 0.5rem;
   @include tablet {
     flex-direction: row;
-    margin: 1rem 2.25rem;
+    margin: 1rem $double-default-padding;
+  }
+  @include desktop {
+    width: $desktop-width;
+    margin:  1rem auto;
   }
 
   // Header Image
