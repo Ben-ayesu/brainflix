@@ -6,10 +6,14 @@
   flex-direction: column;
   align-items: center;
   margin: $default-padding;
-  gap: 0.5rem;
+  gap: 1rem;
   @include tablet {
     flex-direction: row;
-    margin: 1rem 2.25rem;
+    margin: 1rem $double-default-padding;
+  }
+  @include desktop {
+    width: $desktop-width;
+    margin: 1rem auto;
   }
 
   // Header Image
@@ -26,9 +30,12 @@
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     background-color: white;
-    border: 2px solid #ccc;
+    border: 1px solid $secondary-mercury;
     border-radius: 4px;
     margin-right: 1rem;
+    @include tablet {
+      width: 60%;
+    }
   }
 
   // Header Search
@@ -37,6 +44,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    @include tablet {
+      justify-content: end;
+    }
   }
 
   // Header Avatar
@@ -63,8 +73,5 @@
   // Header Btn
   &__btn {
     background-image: url("../../assets/Icons/upload.svg");
-    background-repeat: no-repeat;
-    background-position: 10px 6px;
-    padding: 12px 20px 12px 40px;
   }
 }

@@ -1,14 +1,13 @@
-import logo from "../../assets/Logo/BrainFlix-logo.svg";
-import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
 import "../../styles/App.scss";
+import Button from "../Button/Button";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="header">
       {/* Logo */}
       <a href="google.com/#blank" className="header__logo">
-        <img src={logo} alt="BrainFlix Logo" className="header__img" />
+        <img src={props.logo} alt="BrainFlix Logo" className="header__img" />
       </a>
       {/* Search box */}
       <div className="header__search-mobile">
@@ -19,14 +18,12 @@ const Header = () => {
           id="search"
           placeholder="Search"
         />
-        <img src={avatar} alt="Mohan-muruge" className="header__avatar" />
+        <img src={props.avatar} alt="Mohan-muruge" className="avatar" />
       </div>
       {/* Button */}
-      <button className="header__btn" id="upload">
-        Upload
-      </button>
+      <Button text="Upload"></Button>
       {/* Avatar tablet */}
-      <img src={avatar} alt="Mohan-muruge" className="header__avatar-tablet" />
+      <img src={props.avatar} alt="Mohan-muruge" className="avatar-tablet" />
     </header>
   );
 };

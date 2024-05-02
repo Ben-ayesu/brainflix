@@ -2,75 +2,101 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-player {
+  display: flex;
+  flex-direction: column;
+  // Video player
+  &__media {
+    width: 100%;
+  }
+  // Wraps title, author, likes, description
+  &__details-wrapper {
+    margin: $default-padding;
+    @include tablet {
+      margin: $double-default-padding;
+    }
+  }
+
+  &__title {
+    font-weight: $bold;
+    padding-bottom: $default-padding;
+    @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
+
+    @include tablet {
+      @include text-style(
+        $dt-page-header-text-size,
+        $dt-page-header-line-height
+      );
+    }
+  }
+
+  &__metadata {
     display: flex;
-    flex-direction: column;
-    // Video player
-    &__media {
-        width: 100%;
-    }
-    // Wraps title, author, likes, description
-    &__details-wrapper {
-        margin: $default-padding;
-        @include tablet {
-            margin: $double-default-padding;
-        }
-    }
+    flex-direction: row;
+    color: $primary-silver;
+    padding: $default-padding 0;
+    border-bottom: 1px solid $secondary-mercury;
+    border-top: 1px solid $secondary-mercury;
+  }
 
-    &__title {
-        padding-bottom: $default-padding;
-        @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
-        
-        @include tablet {
-            @include text-style($dt-page-header-text-size, $dt-page-header-line-height);
-        }
+  &__channel-date {
+    width: 50%;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
     }
+  }
 
-    &__metadata {
-        display: flex;
-        flex-direction: row;
-        color: $primary-silver;
-        padding: $default-padding 0;
-        border-bottom: 1px solid $secondary-mercury;
-        border-top: 1px solid $secondary-mercury;
+  &__channel {
+    font-weight: $bold;
+    color: $primary-brainflix-black;
+    padding-bottom: 0.5rem;
+    padding-right: $double-default-padding;
+  }
+
+  &__views-likes {
+    width: 50%;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
     }
+  }
 
-    &__channel-date {
-        width: 50%;
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-        }
+  &__views-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-views {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/Icons/views.svg");
+    margin-right: 1rem;
+    fill: $primary-silver;
+  }
+
+  &__views {
+    padding-bottom: 0.5rem;
+    @include tablet {
+      padding-right: $double-default-padding;
     }
+  }
 
-    &__channel {
-        color: $primary-brainflix-black;
-        padding-bottom: 0.5rem;
-        padding-right: $double-default-padding;
-    }
+  &__likes-container {
+    display: flex;
+  }
 
-    &__views-likes {
-        width: 50%;
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-            justify-content: end;
-        }
-    }
+  &__icon-likes {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/Icons/likes.svg");
+    margin-right: 1rem;
+    fill: $primary-silver;
+  }
 
-    &__icon {
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        background-image: url("../../assets/Icons/views.svg");
-        margin-right: 1rem;
-    }
-
-    &__views {
-        padding-bottom: 0.5rem;
-        padding-right: $double-default-padding;
-    }
-
-    &__description {
-        padding-top: $default-padding;
-    }
-
+  &__description {
+    padding-top: $default-padding;
+  }
 }
