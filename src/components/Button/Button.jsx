@@ -2,7 +2,7 @@ import "./Button.scss";
 import "../../styles/App.scss";
 
 const Button = (props) => {
-  return <Button>{props.text}</Button>;
+  return <button className="header__btn">{props.text}</button>;
 };
 
 export default Button;

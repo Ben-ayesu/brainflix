@@ -13,7 +13,7 @@
   }
   @include desktop {
     width: $desktop-width;
-    margin:  1rem auto;
+    margin: 1rem auto;
   }
 
   // Header Image
@@ -33,6 +33,9 @@
     border: 2px solid #ccc;
     border-radius: 4px;
     margin-right: 1rem;
+    @include tablet {
+      width: 60%;
+    }
   }
 
   // Header Search
@@ -41,6 +44,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    @include tablet {
+      justify-content: end;
+    }
   }
 
   // Header Avatar
