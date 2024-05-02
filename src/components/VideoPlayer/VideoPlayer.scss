@@ -17,6 +17,7 @@
   }
 
   &__title {
+    font-weight: $bold;
     padding-bottom: $default-padding;
     @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
 
@@ -46,6 +47,7 @@
   }
 
   &__channel {
+    font-weight: $bold;
     color: $primary-brainflix-black;
     padding-bottom: 0.5rem;
     padding-right: $double-default-padding;

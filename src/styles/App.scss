@@ -4,44 +4,44 @@
 
 * {
   box-sizing: border-box;
-  border: 1px dashed #cacaca;
+  // border: 1px dashed #cacaca;
   margin: 0;
-  font-family: 'Avenir Next Regular';
+  font-family: "Avenir Next Regular";
 }
 
 h3 {
   @include text-style($mb-subheader-text-size, $mb-subheader-line-height);
-        
+
   @include tablet {
-      @include text-style($dt-subheader-text-size, $dt-subheader-line-height);
+    @include text-style($dt-subheader-text-size, $dt-subheader-line-height);
   }
 }
 
 p {
   @include text-style($mb-body-copy-text-size, $mb-body-copy-line-height);
-        
+
   @include tablet {
-      @include text-style($dt-body-copy-text-size, $dt-body-copy-line-height);
+    @include text-style($dt-body-copy-text-size, $dt-body-copy-line-height);
   }
 }
 
-  // Avatar
-  .avatar {
-    border-radius: 50%;
-    width: 2.25rem;
-    height: 2.25rem;
-    @include tablet {
-      display: none;
-    }
-  }
-
-  // Avatar Tablet
-  .avatar-tablet {
+// Avatar
+.avatar {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  @include tablet {
     display: none;
-    border-radius: 50%;
-    width: 2.25rem;
-    height: 2.25rem;
-    @include tablet {
-      display: flex;
-    }
   }
+}
+
+// Avatar Tablet
+.avatar-tablet {
+  display: none;
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  @include tablet {
+    display: flex;
+  }
+}

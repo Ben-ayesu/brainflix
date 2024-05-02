@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   margin: $default-padding;
-  gap: 0.5rem;
+  gap: 1rem;
   @include tablet {
     flex-direction: row;
     margin: 1rem $double-default-padding;
@@ -30,7 +30,7 @@
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     background-color: white;
-    border: 2px solid #ccc;
+    border: 1px solid $secondary-mercury;
     border-radius: 4px;
     margin-right: 1rem;
     @include tablet {
