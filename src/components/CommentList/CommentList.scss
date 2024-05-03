@@ -1,6 +1,10 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+Ul {
+  padding: 0;
+}
+
 .comment {
     display: flex;
     border-bottom: 1px solid $secondary-mercury;
@@ -27,6 +31,21 @@
       
     &__detail {
         font-weight: $regular;
+        margin-bottom: $default-padding;
       }
   }
+
+  .avatar-comments-basic {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: #E1E1E1;
+    @include tablet {
+      border-radius: 50%;
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+}
+   
+  
   

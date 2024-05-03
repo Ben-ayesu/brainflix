@@ -27,7 +27,7 @@ function App() {
     <>
       <Header logo={logo} avatar={avatar} className={"header"}></Header>
       <VideoPlayer video={video}></VideoPlayer>
-      <CommentsForm video={video}></CommentsForm>
+      <CommentsForm video={video} avatar={avatar}></CommentsForm>
     </>
   );
 }

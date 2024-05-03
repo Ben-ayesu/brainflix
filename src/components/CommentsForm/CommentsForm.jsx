@@ -1,11 +1,10 @@
-import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./CommentsForm.scss";
 import "../../styles/App.scss";
 import CommentList from "../CommentList/CommentList";
 import Button from "../Button/Button";
 import CommentIcon from "../../assets/Icons/add_comment.svg";
 
-const CommentsForm = ({ video }) => {
+const CommentsForm = ({ video, avatar }) => {
   return (
     <section className="comments">
       <div className="comments__form-container">

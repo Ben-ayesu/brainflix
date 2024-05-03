@@ -17,6 +17,8 @@
   &__form-container {
     display: flex;
     flex-direction: row;
+    border-bottom: 1px solid $secondary-mercury;
+
     @include tablet {
       align-items: flex-end;
     }
