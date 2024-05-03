@@ -2,12 +2,12 @@ import "./Header.scss";
 import "../../styles/App.scss";
 import Button from "../Button/Button";
 
-const Header = (props) => {
+const Header = ({ logo, avatar }) => {
   return (
     <header className="header">
       {/* Logo */}
       <a href="google.com/#blank" className="header__logo">
-        <img src={props.logo} alt="BrainFlix Logo" className="header__img" />
+        <img src={logo} alt="BrainFlix Logo" className="header__img" />
       </a>
       {/* Search box */}
       <div className="header__search-mobile">
@@ -18,12 +18,12 @@ const Header = (props) => {
           id="search"
           placeholder="Search"
         />
-        <img src={props.avatar} alt="Mohan-muruge" className="avatar" />
+        <img src={avatar} alt="Mohan-muruge" className="avatar" />
       </div>
       {/* Button */}
       <Button text="Upload"></Button>
       {/* Avatar tablet */}
-      <img src={props.avatar} alt="Mohan-muruge" className="avatar-tablet" />
+      <img src={avatar} alt="Mohan-muruge" className="avatar-tablet" />
     </header>
   );
 };
