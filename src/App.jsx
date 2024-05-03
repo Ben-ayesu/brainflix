@@ -2,30 +2,34 @@ import { useState } from "react";
 import videoData from "./data/video-details.json";
 import logo from "./assets/Logo/BrainFlix-logo.svg";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
-import Comments from "./components/Comments/Comments";
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import CommentsForm from "./components/CommentsForm/CommentsForm";
+import CommentList from "./components/CommentList/CommentList"
 import "./styles/App.scss";
 
 console.log(videoData);
 
 function App() {
-  const [video, setVideo] = useState(videoData[0]);
+  const [video, setVideo] = useState(videoData);
+  console.log(video);
   const [selectVideo, setSelectVideo] = useState({});
 
   const handleVideoClick = (id) => {
     console.log(id);
-    const foundVideo = videoData.find((video) => video.id === id);
-    console.log(foundVideo);
+    console.log("Video Clicked")
+    const selectedVideo = videoData.find((video) => video.id === id);
+    console.log(selectedVideo);
 
-    setSelectVideo(foundVideo);
+    setSelectVideo(selectedVideo);
   };
 
   return (
     <>
       <Header logo={logo} avatar={avatar}></Header>
-      <VideoPlayer video={video}></VideoPlayer>
-      <Comments></Comments>
+      <VideoPlayer selectedVideo={selectVideo}></VideoPlayer>
+      <CommentsForm></CommentsForm>
+      <CommentList video={video}></CommentList>
     </>
   );
 }
