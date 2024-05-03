@@ -5,7 +5,7 @@ import CommentList from "../CommentList/CommentList";
 import Button from "../Button/Button";
 import CommentIcon from "../../assets/Icons/add_comment.svg";
 
-const CommentsForm = () => {
+const CommentsForm = ({ video }) => {
   return (
     <section className="comments">
       <div className="comments__form-container">
@@ -28,7 +28,7 @@ const CommentsForm = () => {
           ></Button>
         </form>
       </div>
-      <CommentList></CommentList>
+      <CommentList video={video}></CommentList>
     </section>
   );
 };
