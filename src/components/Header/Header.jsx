@@ -1,19 +1,20 @@
 import "./Header.scss";
 import "../../styles/App.scss";
 import Button from "../Button/Button";
+import uploadIcon from "../../assets/Icons/upload.svg";
 
-const Header = ({ logo, avatar }) => {
+const Header = ({ logo, avatar, className }) => {
   return (
-    <header className="header">
+    <header className={className}>
       {/* Logo */}
-      <a href="google.com/#blank" className="header__logo">
-        <img src={logo} alt="BrainFlix Logo" className="header__img" />
+      <a href="google.com/#blank" className={`${className}__logo`}>
+        <img src={logo} alt="BrainFlix Logo" className={`${className}__img`} />
       </a>
       {/* Search box */}
-      <div className="header__search-mobile">
-        <i className="header__icon"></i>
+      <div className={`${className}__search-mobile`}>
+        <i className={`${className}__icon`}></i>
         <input
-          className="header__input"
+          className={`${className}__input`}
           type="search"
           id="search"
           placeholder="Search"
@@ -21,7 +22,7 @@ const Header = ({ logo, avatar }) => {
         <img src={avatar} alt="Mohan-muruge" className="avatar" />
       </div>
       {/* Button */}
-      <Button text="Upload"></Button>
+      <Button icon={uploadIcon} text="Upload" className={"btn"}></Button>
       {/* Avatar tablet */}
       <img src={avatar} alt="Mohan-muruge" className="avatar-tablet" />
     </header>

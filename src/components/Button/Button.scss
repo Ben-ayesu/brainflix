@@ -1,11 +1,12 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-button {
+.btn {
+  display: flex;
+  align-items: center;
   background-color: $primary-brainflix-blue;
   background-repeat: no-repeat;
   background-position: 10px 6px;
-  padding: 12px 20px 12px 40px;
   color: $primary-white;
   height: 2.5rem;
   border-radius: 0.25rem;
@@ -18,4 +19,33 @@ button {
   &:hover {
     background-color: $secondary-brainflix-darkblue;
   }
+
+  &__text {
+    flex: 1;
+    }
+}
+
+.btn-comment {
+  display: flex;
+  align-items: center;
+  background-color: $primary-brainflix-blue;
+  background-repeat: no-repeat;
+  background-position: 10px 6px;
+  color: $primary-white;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  text-transform: uppercase;
+  @include tablet {
+    width: 9.375rem;
+    align-self: flex-end;
+  }
+  &:hover {
+    background-color: $secondary-brainflix-darkblue;
+  }
+
+  &__text {
+    flex: 1;
+    }
 }

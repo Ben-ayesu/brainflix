@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <Header logo={logo} avatar={avatar}></Header>
+      <Header logo={logo} avatar={avatar} className={"header"}></Header>
       <VideoPlayer video={video}></VideoPlayer>
       <CommentsForm></CommentsForm>
     </>

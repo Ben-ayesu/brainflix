@@ -2,6 +2,8 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./CommentsForm.scss";
 import "../../styles/App.scss";
 import CommentList from "../CommentList/CommentList";
+import Button from "../Button/Button";
+import CommentIcon from "../../assets/Icons/add_comment.svg";
 
 const CommentsForm = () => {
   return (
@@ -19,7 +21,11 @@ const CommentsForm = () => {
               placeholder="Add a new comment"
             ></textarea>
           </div>
-          <button className="comments__btn">Comment</button>
+          <Button
+            icon={CommentIcon}
+            text={"Comment"}
+            className={"btn-comment"}
+          ></Button>
         </form>
       </div>
       <CommentList></CommentList>
