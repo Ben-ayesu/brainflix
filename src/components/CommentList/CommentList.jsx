@@ -1,6 +1,5 @@
 const CommentList = ({ video }) => {
-  return <ul>{
-    }</ul>;
+  return <ul>{<li>Test</li>}</ul>;
 };
 
-export default Comment;
+export default CommentList;

@@ -99,4 +99,9 @@
   &__description {
     padding-top: $default-padding;
   }
+
+  &__comments-count {
+    padding-top: $default-padding;
+    font-weight: $bold;
+  }
 }

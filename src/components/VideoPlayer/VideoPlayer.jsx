@@ -3,7 +3,7 @@ import "../../styles/App.scss";
 
 const VideoPlayer = ({ video }) => {
   return (
-    <div id={video.id} className="video-player">
+    <div className="video-player">
       {/* Video player */}
       <video
         className="video-player__media"
@@ -31,6 +31,7 @@ const VideoPlayer = ({ video }) => {
           </div>
         </div>
         <p className="video-player__description">{video.description}</p>
+        <p className="video-player__comments-count">3 Comments</p>
       </div>
     </div>
   );

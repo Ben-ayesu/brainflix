@@ -5,19 +5,18 @@ import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import CommentsForm from "./components/CommentsForm/CommentsForm";
-import CommentList from "./components/CommentList/CommentList"
 import "./styles/App.scss";
 
 console.log(videoData);
 
 function App() {
-  const [video, setVideo] = useState(videoData);
+  const [video, setVideo] = useState(videoData[0]);
   console.log(video);
   const [selectVideo, setSelectVideo] = useState({});
 
   const handleVideoClick = (id) => {
     console.log(id);
-    console.log("Video Clicked")
+    console.log("Video Clicked");
     const selectedVideo = videoData.find((video) => video.id === id);
     console.log(selectedVideo);
 
@@ -27,9 +26,8 @@ function App() {
   return (
     <>
       <Header logo={logo} avatar={avatar}></Header>
-      <VideoPlayer selectedVideo={selectVideo}></VideoPlayer>
+      <VideoPlayer video={video}></VideoPlayer>
       <CommentsForm></CommentsForm>
-      <CommentList video={video}></CommentList>
     </>
   );
 }
