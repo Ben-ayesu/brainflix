@@ -1,4 +1,5 @@
 import "./CommentList.scss";
+import "../../styles/App.scss";
 
 const CommentList = ({ video, avatar }) => {
   return (

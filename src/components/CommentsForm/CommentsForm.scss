@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   margin: $default-padding;
+  margin-bottom: 0;
   gap: $default-padding;
   @include tablet {
     margin: $default-padding $double-default-padding;
