@@ -11,7 +11,9 @@ const CommentList = ({ video, avatar }) => {
           <div class="comment__content">
             <div class="comment__name-date">
               <p class="comment__name">{comment.name}</p>
-              <p class="comment__date">{comment.timestamp}</p>
+              <p class="comment__date">
+                {new Date(comment.timestamp).toLocaleDateString()}
+              </p>
             </div>
             <p class="comment__detail">{comment.comment}</p>
           </div>
