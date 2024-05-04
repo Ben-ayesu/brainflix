@@ -3,7 +3,10 @@
 
 .suggestion__list {
   padding: 0;
-  margin: 0 1rem;
+  margin: 0 $default-padding;
+  @include tablet {
+    margin: 0 $double-default-padding;
+  }
 }
 
 .suggestion {
@@ -13,6 +16,9 @@
         @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
         padding-bottom: $default-padding;
         color: $primary-silver;
+        @include tablet {
+            padding-bottom: $double-default-padding;
+        }
     }
     &__img {
         max-width: 40%;

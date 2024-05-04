@@ -14,7 +14,7 @@
   width: 100%;
   text-transform: uppercase;
   @include tablet {
-    width: 9.375rem;
+    width: 19.375rem;
   }
   &:hover {
     background-color: $secondary-brainflix-darkblue;
@@ -39,7 +39,8 @@
   width: 100%;
   text-transform: uppercase;
   @include tablet {
-    width: 9.375rem;
+    width: 15.375rem;
+    margin-bottom: 0;
     align-self: flex-end;
   }
   &:hover {
