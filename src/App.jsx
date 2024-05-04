@@ -7,20 +7,19 @@ import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import CommentsForm from "./components/CommentsForm/CommentsForm";
 import "./styles/App.scss";
 
-console.log(videoData);
 
 function App() {
+  const [videos, setVideos] = useState(videoData);
+  console.log(videos)
   const [video, setVideo] = useState(videoData[0]);
-  console.log(video);
-  const [selectVideo, setSelectVideo] = useState({});
+  const [selectVideo, setSelectedVideo] = useState({});
 
   const handleVideoClick = (id) => {
     console.log(id);
     console.log("Video Clicked");
     const selectedVideo = videoData.find((video) => video.id === id);
     console.log(selectedVideo);
-
-    setSelectVideo(selectedVideo);
+    setSelectedVideo(selectedVideo);
   };
 
   return (
