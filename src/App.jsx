@@ -9,14 +9,13 @@ import SuggestionList from "./components/SuggestionList/SuggestionList";
 import "./styles/App.scss";
 
 function App() {
-  const [videos, setVideos] = useState(videoData);
-  const [selectVideo, setSelectedVideo] = useState(videos[0]);
+  const [videos, setVideos] = useState(videoData); // store videos using state to keep track
+  const [selectVideo, setSelectedVideo] = useState(videos[0]); // store initial video to the first
 
+  // handle click for suggestion list
   const handleVideoClick = (id) => {
-    console.log(id);
     console.log("Video Clicked");
     const selectedVideo = videoData.find((video) => video.id === id);
-    console.log(selectedVideo);
     setSelectedVideo(selectedVideo);
   };
 
