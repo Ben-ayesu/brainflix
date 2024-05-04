@@ -36,6 +36,10 @@
     padding: $default-padding 0;
     border-bottom: 1px solid $secondary-mercury;
     border-top: 1px solid $secondary-mercury;
+    @include tablet {
+      border-top: 0;
+      padding-top: 0;
+    }
   }
 
   &__channel-date {
