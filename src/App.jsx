@@ -10,11 +10,7 @@ import "./styles/App.scss";
 
 function App() {
   const [videos, setVideos] = useState(videoData);
-  console.log(videos);
-  const [video, setVideo] = useState(videoData[0]);
-  const [selectVideo, setSelectedVideo] = useState({});
-
-  // TODO: Work on list functionality on click
+  const [selectVideo, setSelectedVideo] = useState(videos[0]);
 
   const handleVideoClick = (id) => {
     console.log(id);
@@ -27,9 +23,13 @@ function App() {
   return (
     <>
       <Header logo={logo} avatar={avatar} className={"header"}></Header>
-      <VideoPlayer video={video}></VideoPlayer>
-      <CommentsForm video={video} avatar={avatar}></CommentsForm>
-      <SuggestionList videos={videos}></SuggestionList>
+      <VideoPlayer selectVideo={selectVideo}></VideoPlayer>
+      <CommentsForm selectVideo={selectVideo} avatar={avatar}></CommentsForm>
+      <SuggestionList
+        videos={videos}
+        handleVideoClick={handleVideoClick}
+        selectedVideoId={selectVideo.id}
+      ></SuggestionList>
     </>
   );
 }

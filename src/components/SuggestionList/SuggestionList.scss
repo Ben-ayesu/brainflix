@@ -10,33 +10,32 @@
 }
 
 .suggestion {
-    display: flex;
-    margin-bottom: $default-padding;
-    &__header {
-        @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
-        padding-bottom: $default-padding;
-        color: $primary-silver;
-        @include tablet {
-            padding-bottom: $double-default-padding;
-        }
-    }
-    &__img {
-        max-width: 40%;
-        border-radius: .25rem;
-        // FIXME: Image resizing for tablett view 
-    }
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-left: $default-padding;
-    }
-    &__title {
-        font-weight: $bold;
-    }
-    &__channel {
-
+  display: flex;
+  margin-bottom: $default-padding;
+  &__header {
+    @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
+    padding-bottom: $default-padding;
+    color: $primary-silver;
+    @include tablet {
+      padding-bottom: $double-default-padding;
     }
   }
-  
-  
+  &__img {
+    max-width: 40%;
+    border-radius: 0.25rem;
+    @include tablet {
+      max-width: 25%;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: $default-padding;
+  }
+  &__title {
+    font-weight: $bold;
+  }
+  &__channel {
+  }
+}
