@@ -9,10 +9,17 @@ Ul {
     display: flex;
     border-bottom: 1px solid $secondary-mercury;
     margin-bottom: $default-padding;
+    @include desktop {
+      border-bottom: 0;
+      border-top: 1px solid $secondary-mercury;
+    }
     &__content {
         margin-left: 1rem;
         width: 90%;
         flex-grow: 1;
+        @include desktop {
+          margin-top: $default-padding;
+        }
       }
       
     &__name-date {
@@ -45,6 +52,9 @@ Ul {
       border-radius: 50%;
       width: 2.25rem;
       height: 2.25rem;
+    }
+    @include desktop {
+      margin-top: $default-padding;
     }
 }
    

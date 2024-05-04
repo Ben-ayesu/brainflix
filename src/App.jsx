@@ -4,6 +4,7 @@ import logo from "./assets/Logo/BrainFlix-logo.svg";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import VideoPlayerDetails from "./components/VideoPlayerDetails/VideoPlayerDetails";
 import CommentsForm from "./components/CommentsForm/CommentsForm";
 import SuggestionList from "./components/SuggestionList/SuggestionList";
 import "./styles/App.scss";
@@ -23,12 +24,20 @@ function App() {
     <>
       <Header logo={logo} avatar={avatar} className={"header"}></Header>
       <VideoPlayer selectVideo={selectVideo}></VideoPlayer>
-      <CommentsForm selectVideo={selectVideo} avatar={avatar}></CommentsForm>
-      <SuggestionList
-        videos={videos}
-        handleVideoClick={handleVideoClick}
-        selectedVideoId={selectVideo.id}
-      ></SuggestionList>
+      <div className="video-player__container">
+        <div className="video-player__body">
+          <VideoPlayerDetails selectVideo={selectVideo}></VideoPlayerDetails>
+          <CommentsForm
+            selectVideo={selectVideo}
+            avatar={avatar}
+          ></CommentsForm>
+        </div>
+        <SuggestionList
+          videos={videos}
+          handleVideoClick={handleVideoClick}
+          selectedVideoId={selectVideo.id}
+        ></SuggestionList>
+      </div>
     </>
   );
 }

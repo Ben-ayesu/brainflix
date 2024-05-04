@@ -36,6 +36,9 @@
     @include tablet {
       width: 60%;
     }
+    @include desktop {
+      width: 38.5%;
+    }
   }
 
   // Header Search

@@ -1,0 +1,123 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+// Wraps title, author, likes, description
+.video-player {
+    // Container -> (Comments Form / Suggestion List)
+    &__container {
+        @include desktop {
+        display: flex;
+        max-width: $desktop-width;
+        margin: 0 auto;
+        }
+    }
+
+    &__body {
+        @include desktop {
+            flex: 2;
+            border-right: 1px solid $secondary-mercury;
+        }
+    }
+
+    // Contains Title, Authorsm Likes, Views, Description
+    &__details-wrapper {
+        margin: $default-padding;
+        @include tablet {
+          margin: $double-default-padding;
+          margin-bottom: $default-padding;
+        }
+      }
+    
+      &__title {
+        font-weight: $bold;
+        padding-bottom: $default-padding;
+        @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
+    
+        @include tablet {
+          @include text-style(
+            $dt-page-header-text-size,
+            $dt-page-header-line-height
+          );
+        }
+      }
+    
+      &__metadata {
+        display: flex;
+        flex-direction: row;
+        color: $primary-silver;
+        padding: $default-padding 0;
+        border-bottom: 1px solid $secondary-mercury;
+        border-top: 1px solid $secondary-mercury;
+        @include tablet {
+          border-top: 0;
+          padding-top: 0;
+        }
+      }
+    
+      &__channel-date {
+        width: 50%;
+        @include tablet {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    
+      &__channel {
+        font-weight: $bold;
+        color: $primary-brainflix-black;
+        padding-bottom: 0.5rem;
+        padding-right: $double-default-padding;
+      }
+    
+      &__views-likes {
+        width: 50%;
+        @include tablet {
+          display: flex;
+          flex-direction: row;
+          justify-content: end;
+        }
+      }
+    
+      &__views-container {
+        display: flex;
+        align-items: center;
+      }
+    
+      &__icon-views {
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/Icons/views.svg");
+        margin-right: 1rem;
+        fill: $primary-silver;
+      }
+    
+      &__views {
+        padding-bottom: 0.5rem;
+        @include tablet {
+          padding-right: $double-default-padding;
+        }
+      }
+    
+      &__likes-container {
+        display: flex;
+      }
+    
+      &__icon-likes {
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/Icons/likes.svg");
+        margin-right: 1rem;
+        fill: $primary-silver;
+      }
+    
+      &__description {
+        padding-top: $default-padding;
+      }
+    
+      &__comments-count {
+        padding-top: $default-padding;
+        font-weight: $bold;
+      }
+}

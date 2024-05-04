@@ -22,6 +22,9 @@
     @include tablet {
       padding-bottom: $default-padding;
     }
+    @include desktop {
+      border-bottom: 0;
+    }
   }
 
   &__form {
