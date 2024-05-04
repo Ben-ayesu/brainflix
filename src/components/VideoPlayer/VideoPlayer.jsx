@@ -18,7 +18,9 @@ const VideoPlayer = ({ video }) => {
         <div className="video-player__metadata">
           <div className="video-player__channel-date">
             <h3 className="video-player__channel">By {video.channel}</h3>
-            <h3 className="video-player__date">{video.timestamp}</h3>
+            <h3 className="video-player__date">
+              {new Date(video.timestamp).toLocaleDateString()}
+            </h3>
           </div>
           <div className="video-player__views-likes">
             <div className="video-player__views-container">
