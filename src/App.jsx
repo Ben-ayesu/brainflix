@@ -5,6 +5,7 @@ import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import CommentsForm from "./components/CommentsForm/CommentsForm";
+import SuggestionList from "./components/SuggestionList/SuggestionList";
 import "./styles/App.scss";
 
 
@@ -13,6 +14,8 @@ function App() {
   console.log(videos)
   const [video, setVideo] = useState(videoData[0]);
   const [selectVideo, setSelectedVideo] = useState({});
+
+  // TODO: Work on list functionality on click
 
   const handleVideoClick = (id) => {
     console.log(id);
@@ -27,6 +30,7 @@ function App() {
       <Header logo={logo} avatar={avatar} className={"header"}></Header>
       <VideoPlayer video={video}></VideoPlayer>
       <CommentsForm video={video} avatar={avatar}></CommentsForm>
+      <SuggestionList videos={videoData}></SuggestionList>
     </>
   );
 }
