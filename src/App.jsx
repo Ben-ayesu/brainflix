@@ -15,6 +15,8 @@ function App() {
   console.log(video);
   const [selectVideo, setSelectVideo] = useState({});
 
+  // TODO: Work on list functionality on click
+
   const handleVideoClick = (id) => {
     console.log(id);
     console.log("Video Clicked");
