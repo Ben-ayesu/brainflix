@@ -8,10 +8,9 @@ import CommentsForm from "./components/CommentsForm/CommentsForm";
 import SuggestionList from "./components/SuggestionList/SuggestionList";
 import "./styles/App.scss";
 
-
 function App() {
   const [videos, setVideos] = useState(videoData);
-  console.log(videos)
+  console.log(videos);
   const [video, setVideo] = useState(videoData[0]);
   const [selectVideo, setSelectedVideo] = useState({});
 
@@ -30,7 +29,7 @@ function App() {
       <Header logo={logo} avatar={avatar} className={"header"}></Header>
       <VideoPlayer video={video}></VideoPlayer>
       <CommentsForm video={video} avatar={avatar}></CommentsForm>
-      <SuggestionList videos={videoData}></SuggestionList>
+      <SuggestionList videos={videos}></SuggestionList>
     </>
   );
 }
