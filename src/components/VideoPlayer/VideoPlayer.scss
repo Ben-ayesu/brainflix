@@ -13,6 +13,7 @@
     margin: $default-padding;
     @include tablet {
       margin: $double-default-padding;
+      margin-bottom: $default-padding;
     }
   }
 
