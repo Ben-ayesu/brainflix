@@ -55,16 +55,23 @@
 
   &__input {
     color: $primary-brainflix-black;
+    background-color: $secondary-alabaster;
     padding-left: 0.5rem;
     padding-top: 0.5rem;
     margin-bottom: 1rem;
     overflow: hidden;
     border: 1px solid $secondary-mercury;
+    resize: none;
     @include tablet {
       padding-bottom: 1.75rem;
       margin-bottom: 0;
       width: 100%;
       height: 1rem;
+    }
+    &:active,
+    &:focus {
+      border: 1px solid $primary-brainflix-blue;
+      outline: none;
     }
   }
 }
