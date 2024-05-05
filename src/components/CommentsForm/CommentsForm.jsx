@@ -11,11 +11,12 @@ const CommentsForm = ({ selectVideo, avatar }) => {
         <img src={avatar} alt="Mohan Muruge" className="avatar-comments" />
         <form action="" className="comments__form">
           <div className="comments__input-container">
-            <label className="comments__label" htmlFor="comments_input">
+            <label className="comments__label" htmlFor="comments__input">
               Join the Conversation
             </label>
             <textarea
               rows="3"
+              id="comments__input"
               className="comments__input"
               placeholder="Add a new comment"
             ></textarea>

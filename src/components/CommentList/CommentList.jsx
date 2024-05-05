@@ -1,22 +1,18 @@
 import "./CommentList.scss";
 import "../../styles/App.scss";
+import Comment from "../Comment/Comment";
 
 const CommentList = ({ selectVideo, avatar }) => {
   return (
     <ul>
       {selectVideo.comments?.map((comment) => (
-        <li className="comment" key={comment.id}>
-          <div className="avatar-comments-basic">{avatar}</div>
-          <div class="comment__content">
-            <div class="comment__name-date">
-              <p class="comment__name">{comment.name}</p>
-              <p class="comment__date">
-                {new Date(comment.timestamp).toLocaleDateString()}
-              </p>
-            </div>
-            <p class="comment__detail">{comment.comment}</p>
-          </div>
-        </li>
+        <Comment
+          id={comment.id}
+          avatar={avatar}
+          name={comment.name}
+          timestamp={comment.timestamp}
+          comment={comment.comment}
+        ></Comment>
       ))}
     </ul>
   );
