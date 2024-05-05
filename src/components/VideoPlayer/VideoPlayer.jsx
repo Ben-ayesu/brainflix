@@ -6,11 +6,13 @@ const VideoPlayer = ({ selectVideo }) => {
   return (
     <div className="video-player">
       {/* Video player */}
-      <video
-        className="video-player__media"
-        controls
-        poster={selectVideo.image}
-      ></video>
+      <div className="video-player__media">
+        <video
+          className="video-player__video"
+          controls
+          poster={selectVideo.image}
+        ></video>
+      </div>
     </div>
   );
 };

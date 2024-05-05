@@ -2,16 +2,27 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-player {
-  display: flex;
-  flex-direction: column;
-  background-color: $secondary-brainflix-darkblack;
+  background-color: $secondary-brainflix-darkblack; // default background color
   // Video player
   &__media {
-    // @include tablet {
-    //   padding: 0 $default-padding;
-    // }
-    // @include desktop {
-    //   padding: 0 $double-default-padding;
-    // }
+    position: relative;
+    overflow: hidden;
+    background-color: $secondary-brainflix-darkblack;
+    @include tablet {
+      margin: 0 $double-default-padding;
+    }
+    @include desktop {
+      width: $desktop-width;
+      margin: 0 auto;
+    }
+  }
+  // Video
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include tablet {
+      object-fit: contain;
+    }
   }
 }
