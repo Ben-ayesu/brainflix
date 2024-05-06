@@ -1,13 +1,12 @@
+import "./styles/App.scss";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import videoData from "./data/video-details.json";
 import logo from "./assets/Logo/BrainFlix-logo.svg";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
-import VideoPlayerDetails from "./components/VideoPlayerDetails/VideoPlayerDetails";
-import CommentsForm from "./components/CommentsForm/CommentsForm";
-import SuggestionList from "./components/SuggestionList/SuggestionList";
-import "./styles/App.scss";
+import Home from "./pages/Home/Home";
+import VideoUpload from "./pages/VidepUpload/VideoUpload";
 
 function App() {
   const [videos, setVideos] = useState(videoData); // store videos for side videos
@@ -21,24 +20,37 @@ function App() {
   };
 
   return (
-    <>
-      <Header logo={logo} avatar={avatar} className={"header"}></Header>
-      <VideoPlayer selectVideo={selectVideo}></VideoPlayer>
-      <div className="video-player__container">
-        <div className="video-player__body">
-          <VideoPlayerDetails selectVideo={selectVideo}></VideoPlayerDetails>
-          <CommentsForm
-            selectVideo={selectVideo}
-            avatar={avatar}
-          ></CommentsForm>
-        </div>
-        <SuggestionList
-          videos={videos}
-          handleVideoClick={handleVideoClick}
-          selectedVideoId={selectVideo.id}
-        ></SuggestionList>
+    <BrowserRouter>
+      <div className="App">
+        <Header logo={logo} avatar={avatar} className={"header"}></Header>
+        <Routes>
+          <Route
+            path="/home"
+            element={
+              <Home
+                selectVideo={selectVideo}
+                avatar={avatar}
+                videos={videos}
+                handleVideoClick={handleVideoClick}
+              ></Home>
+            }
+          ></Route>
+          <Route path="/home" element={<Navigate to="/" />}></Route>
+          <Route
+            path="/videoupload"
+            element={
+              <VideoUpload
+                selectVideo={selectVideo}
+                avatar={avatar}
+                videos={videos}
+                handleVideoClick={handleVideoClick}
+              ></VideoUpload>
+            }
+          ></Route>
+          <Route path="*" element={<h1>No path found</h1>}></Route>
+        </Routes>
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 

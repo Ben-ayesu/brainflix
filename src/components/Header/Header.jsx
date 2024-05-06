@@ -1,15 +1,16 @@
 import "./Header.scss";
 import "../../styles/App.scss";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import uploadIcon from "../../assets/Icons/upload.svg";
 
 const Header = ({ logo, avatar, className }) => {
   return (
     <header className={className}>
-      {/* Logo */}
-      <a href="google.com/#blank" className={`${className}__logo`}>
+      {/* Logo - Navigates Home */}
+      <Link to={"/home"} className={`${className}__logo`}>
         <img src={logo} alt="BrainFlix Logo" className={`${className}__img`} />
-      </a>
+      </Link>
       {/* Search box */}
       <div className={`${className}__search-mobile`}>
         <i className={`${className}__icon`}></i>
@@ -21,8 +22,10 @@ const Header = ({ logo, avatar, className }) => {
         />
         <img src={avatar} alt="Mohan-muruge" className="avatar" />
       </div>
-      {/* Button */}
-      <Button icon={uploadIcon} text="Upload" className={"btn"}></Button>
+      {/* Button - Navigates to upload page */}
+      <Link to={"/videoupload"} className={`${className}__logo`}>
+        <Button icon={uploadIcon} text="Upload" className={"btn"}></Button>
+      </Link>
       {/* Avatar tablet */}
       <img src={avatar} alt="Mohan-muruge" className="avatar-tablet" />
     </header>
