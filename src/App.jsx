@@ -6,7 +6,7 @@ import logo from "./assets/Logo/BrainFlix-logo.svg";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import VideoUpload from "./pages/VidepUpload/VideoUpload";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
 function App() {
   const [videos, setVideos] = useState(videoData); // store videos for side videos
