@@ -23,7 +23,7 @@ const Header = ({ logo, avatar, className }) => {
         <img src={avatar} alt="Mohan-muruge" className="avatar" />
       </div>
       {/* Button - Navigates to upload page */}
-      <Link to={"/videoupload"} className={`${className}__logo`}>
+      <Link to={"/videoupload"} className={`${className}__link`}>
         <Button icon={uploadIcon} text="Upload" className={"btn"}></Button>
       </Link>
       {/* Avatar tablet */}

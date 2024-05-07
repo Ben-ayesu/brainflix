@@ -2,12 +2,26 @@
 @use "../../styles/partials/variables" as *;
 
 .videoUpload-page {
+  display: flex;
+  flex-direction: column;
   padding-top: $default-padding;
   margin: 0 $default-padding;
   border-top: 1px solid $secondary-mercury;
-  display: flex;
-  flex-direction: column;
+  &__header {
+    margin: 1rem 0;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+  &__tb-wrapper {
+    width: 100%;
+  }
   &__thumbnail {
-    
+    margin-bottom: 1rem;
+    width: 50%;
   }
 }

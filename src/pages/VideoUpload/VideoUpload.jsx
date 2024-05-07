@@ -5,18 +5,24 @@ import "./VideoUpload.scss";
 
 const VideoUpload = () => {
   return (
-    <div className="videoUpload-page">
-      <h1 className="videoUpload-page__header">Upload Video</h1>
-      <h2 className="videoUpload-page__title">Video Thumbnail</h2>
-      <img
-        src={thumbnail}
-        alt="Video Preview"
-        className="videoUpload-page__thumbnail"
-      />
-      <div className="videoUpload-page__container">
-        <UploadForm></UploadForm>
+    <>
+      <div className="videoUpload-page">
+        <h1 className="videoUpload-page__header">Upload Video</h1>
+        <div className="videoUpload-page__container">
+          <div className="videoUpload-page__tb-wrapper">
+            <h2 className="videoUpload-page__title">Video Thumbnail</h2>
+            <img
+              src={thumbnail}
+              alt="Video Preview"
+              className="videoUpload-page__thumbnail"
+            />
+          </div>
+          <div className="videoUpload-page__form-container">
+            <UploadForm></UploadForm>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -79,6 +79,12 @@
     }
   }
 
+  // Btn logo
+  &__link {
+    width: 100%;
+    text-decoration: none;
+  }
+
   // Header Btn
   &__btn {
     background-image: url("../../assets/Icons/upload.svg");
