@@ -3,8 +3,9 @@ import "../../styles/App.scss";
 import CommentList from "../CommentList/CommentList";
 import Button from "../Button/Button";
 import CommentIcon from "../../assets/Icons/add_comment.svg";
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
 
-const CommentsForm = ({ selectVideo, avatar }) => {
+const CommentsForm = ({ selectVideo }) => {
   return (
     <section className="comments">
       <div className="comments__form-container">

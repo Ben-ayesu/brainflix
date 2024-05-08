@@ -2,6 +2,8 @@ import "./VideoPlayerDetails.scss";
 import "../../styles/App.scss";
 
 const VideoPlayerDetails = ({ selectVideo }) => {
+  console.log("video player details", selectVideo);
+
   return (
     <>
       {/* Video player content */}
@@ -28,7 +30,7 @@ const VideoPlayerDetails = ({ selectVideo }) => {
         </div>
         <p className="video-player__description">{selectVideo.description}</p>
         <p className="video-player__comments-count">
-          {selectVideo.comments.length} Comments
+          {selectVideo.comments?.length} Comments
         </p>
       </div>
     </>
