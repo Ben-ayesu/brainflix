@@ -2,7 +2,6 @@ import "./styles/App.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import videoData from "./data/video-details.json";
 import logo from "./assets/Logo/BrainFlix-logo.svg";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Header from "./components/Header/Header";
@@ -12,12 +11,13 @@ import VideoUpload from "./pages/VideoUpload/VideoUpload";
 function App() {
   const [videos, setVideos] = useState([]); // store videos for side videos
   const [selectVideo, setSelectedVideo] = useState(); // store for main video detail
+  console.log(selectVideo);
   const api_key = "c7e3d896-5e28-4e21-97db-4c461e74097a";
 
   // handle click for suggestion list
   const handleVideoClick = (id) => {
     console.log("Video Clicked");
-    const selectedVideo = videoData.find((video) => video.id === id);
+    const selectedVideo = videos.find((video) => video.id === id);
     setSelectedVideo(selectedVideo);
   };
 
@@ -28,10 +28,12 @@ function App() {
           `https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=${api_key}`
         );
         setVideos(getVideos.data); // sets videos to array of video
+        console.log("get videos", getVideos.data);
 
         const getVideo = await axios.get(
           `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${getVideos.data[0].id}?api_key=${api_key}`
         );
+        console.log("select state", getVideo.data);
         setSelectedVideo(getVideo.data); // set selectVideo to state
       } catch (error) {
         console.log("Could not fetch data", error);

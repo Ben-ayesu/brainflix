@@ -20,15 +20,18 @@ const UploadForm = () => {
         <label className="uploadForm__label" htmlFor="uploadForm__input">
           Add a Video Description
         </label>
-        <input
+        <textarea
           className={`uploadForm__description-input`}
+          rows="4"
           type="textarea"
           id="search"
           placeholder="Add a description to your video"
         />
       </div>
-      <Button icon={PublishIcon} text={"Publish"} className={"btn"}></Button>
-      <button className="uploadForm__cancel-btn">cancel</button>
+      <div className="uploadForm__btn-wrapper">
+        <Button icon={PublishIcon} text={"Publish"} className={"btn"}></Button>
+        <button className="uploadForm__cancel-btn">cancel</button>
+      </div>
     </>
   );
 };
