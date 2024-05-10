@@ -12,10 +12,8 @@ const Home = () => {
   const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
   const [videos, setVideos] = useState([]); // store videos for side videos
   const [selectVideo, setSelectedVideo] = useState({}); // store for main video detail
-  console.log("selected video:", selectVideo);
   const { id } = useParams();
-
-  console.log("id", selectVideo.id);
+  console.log(id)
 
   useEffect(() => {
     const getVideos = async () => {
@@ -44,11 +42,11 @@ const Home = () => {
     };
 
     if (id) {
+      console.log(id)
       getSingleVideo(id);
     } else {
       getSingleVideo("84e96018-4022-434e-80bf-000ce4cd12b8");
     }
-    console.log(id);
   }, [id]);
 
   return (

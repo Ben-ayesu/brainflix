@@ -2,6 +2,7 @@ import "./VideoPlayer.scss";
 import "../../styles/App.scss";
 
 const VideoPlayer = ({ selectVideo }) => {
+  console.log(selectVideo.video)
   return (
     <div className="video-player">
       {/* Video player */}

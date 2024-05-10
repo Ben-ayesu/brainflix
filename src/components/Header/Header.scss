@@ -35,10 +35,11 @@
     border-radius: 4px;
     margin-right: 1rem;
     @include tablet {
-      width: 60%;
+      width: 66%;
     }
     @include desktop {
-      width: 38.5%;
+      width: 41%;
+      margin-right: 0;
     }
     &:active,
     &:focus {
@@ -83,6 +84,11 @@
   &__link {
     width: 100%;
     text-decoration: none;
+    @include tablet {
+      width: 23%;
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 
   // Header Btn

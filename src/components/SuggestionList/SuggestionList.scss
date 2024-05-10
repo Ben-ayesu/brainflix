@@ -3,10 +3,10 @@
 
 .suggestion__list {
   display: flex;
-  width: 100%;
   flex-direction: column;
   padding: 0;
   margin: 0 $default-padding;
+  list-style: none;
   @include tablet {
     width: $tablet-width;
     margin: 0 $double-default-padding;
@@ -19,6 +19,8 @@
 .suggestion {
   display: flex;
   margin-bottom: $default-padding;
+  text-decoration: none;
+  color: $primary-brainflix-black;
   &__header {
     @include text-style($mb-page-header-text-size, $mb-page-header-line-height);
     padding-bottom: $default-padding;
