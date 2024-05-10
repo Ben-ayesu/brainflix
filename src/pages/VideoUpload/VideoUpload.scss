@@ -7,6 +7,10 @@
   padding-top: $default-padding;
   margin: 0 $default-padding;
   border-top: 1px solid $secondary-mercury;
+  @include desktop {
+    width: 1280px;
+    margin: 0 auto;
+  }
   &__header {
     margin: 1rem 0;
     font-weight: $bold;
@@ -21,28 +25,38 @@
     @include desktop {
       flex-direction: row;
       padding-top: 0.5rem;
+      padding-bottom: $default-padding;
+      border-bottom: 1px solid $secondary-mercury;
     }
   }
   &__tb-wrapper {
     width: 100%;
+    flex: 1;
   }
   &__form-container {
     display: flex;
     flex-direction: column;
     @include desktop {
-      width: 100%;
+      flex: 2;
+      margin-left: $double-default-padding;
     }
   }
   &__title {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: $primary-silver;
+    @include desktop {
+      width: fit-content;
+    }
   }
   &__thumbnail {
     margin-bottom: 1rem;
     width: 100%;
     @include tablet {
       width: 50%;
+    }
+    @include desktop {
+      width: 100%;
     }
   }
 }

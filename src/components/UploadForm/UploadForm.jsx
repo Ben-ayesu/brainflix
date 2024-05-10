@@ -22,7 +22,7 @@ const UploadForm = () => {
         </label>
         <textarea
           className={`uploadForm__description-input`}
-          rows="4"
+          rows="6"
           type="textarea"
           id="search"
           placeholder="Add a description to your video"

@@ -25,6 +25,9 @@
       width: 100%;
       height: 1rem;
     }
+    @include desktop {
+      margin-bottom: $double-default-padding;
+    }
     &:active,
     &:focus {
       border: 1px solid $primary-brainflix-blue;
@@ -58,6 +61,20 @@
       justify-content: flex-start;
       align-items: center;
       gap: 5rem;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+  &__btn-wrapper-desktop {
+    display: none;
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 5rem;
+      margin-top: $double-default-padding;
     }
   }
   &__cancel-btn {
