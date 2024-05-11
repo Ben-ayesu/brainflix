@@ -10,9 +10,9 @@ const Button = ({ icon, text, className, type }) => {
   );
 };
 
-const TextButton = ({ text, className, type }) => {
+const TextButton = ({ text, className, type, onClick }) => {
   return (
-    <button type={type} className={className}>
+    <button type={type} className={className} onClick={onClick}>
       <p className={`${className}__text`}>{text}</p>
     </button>
   );

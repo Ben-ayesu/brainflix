@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, TextButton } from "../Button/Button";
 import PublishIcon from "../../assets/Icons/publish.svg";
 import "../../styles/App.scss";
 import "./UploadForm.scss";
+import { ToastContainer, toast } from "react-toastify";
 
 const UploadForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -18,14 +21,37 @@ const UploadForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = { title, description };
-    console.log("Form data submitted:", formData);
-    alert("Button has been clicked");
+
+    const uploadFormData = {
+      title: title.trim(),
+      description: description.trim(),
+    };
+
+    if (uploadFormData.title === "" || uploadFormData.description === "") {
+      toast("Please fill on both title and description");
+    } else if (
+      uploadFormData.title.length < 3 ||
+      uploadFormData.description.length < 5
+    ) {
+      toast("Please enter longer title or description");
+    } else {
+      toast("Video has has been uploaded", uploadFormData.title);
+      event.target.reset();
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    }
+  };
+
+  const handleCancel = () => {
+    setTitle("");
+    setDescription("");
+    alert("Inputs cancelled");
   };
 
   return (
-    // Upload Form
     <form className="uploadForm" onSubmit={handleSubmit}>
+      <ToastContainer></ToastContainer>
       <label className="uploadForm__label" htmlFor="titleInput">
         Title your Video
       </label>
@@ -60,7 +86,8 @@ const UploadForm = () => {
         <TextButton
           text={"cancel"}
           className={"uploadForm__cancel-btn"}
-          type={"reset"}
+          type={"button"}
+          onClick={handleCancel}
         ></TextButton>
       </div>
     </form>
