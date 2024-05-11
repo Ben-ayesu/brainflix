@@ -1,13 +1,21 @@
 import "./Button.scss";
 import "../../styles/App.scss";
 
-const Button = ({ icon, text, className }) => {
+const Button = ({ icon, text, className, type }) => {
   return (
-    <button type="submit" className={className}>
-      <img src={icon} alt="Button Icon" className={`${className}__icon`} />
+    <button type={type} className={className}>
+      <img src={icon} alt={text} className={`${className}__icon`} />
       <p className={`${className}__text`}>{text}</p>
     </button>
   );
 };
 
-export default Button;
+const TextButton = ({ text, className, type }) => {
+  return (
+    <button type={type} className={className}>
+      <p className={`${className}__text`}>{text}</p>
+    </button>
+  );
+};
+
+export { Button, TextButton };

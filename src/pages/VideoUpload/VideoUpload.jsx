@@ -1,6 +1,6 @@
 import UploadForm from "../../components/UploadForm/UploadForm";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
-import Button from "../../components/Button/Button";
+import { TextButton, Button } from "../../components/Button/Button";
 import PublishIcon from "../../assets/Icons/publish.svg";
 import "../../styles/App.scss";
 import "./VideoUpload.scss";
@@ -28,8 +28,13 @@ const VideoUpload = () => {
             icon={PublishIcon}
             text={"Publish"}
             className={"btn"}
+            type={"submit"}
           ></Button>
-          <button className="uploadForm__cancel-btn">cancel</button>
+          <TextButton
+            text={"cancel"}
+            className={"uploadForm__cancel-btn"}
+            type={"reset"}
+          ></TextButton>
         </div>
       </div>
     </>
