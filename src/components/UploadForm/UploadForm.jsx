@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Button, TextButton} from "../Button/Button";
+import { Button, TextButton } from "../Button/Button";
 import PublishIcon from "../../assets/Icons/publish.svg";
 import "../../styles/App.scss";
 import "./UploadForm.scss";
@@ -49,6 +49,7 @@ const UploadForm = () => {
         onChange={handleChangeDescription}
         value={description}
       />
+      <div className="uploadForm__line-divider"></div>
       <div className="uploadForm__btn-wrapper">
         <Button
           icon={PublishIcon}

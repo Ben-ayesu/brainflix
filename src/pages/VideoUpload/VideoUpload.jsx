@@ -1,7 +1,7 @@
 import UploadForm from "../../components/UploadForm/UploadForm";
 import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
-import { TextButton, Button } from "../../components/Button/Button";
-import PublishIcon from "../../assets/Icons/publish.svg";
+// import { TextButton, Button } from "../../components/Button/Button";
+// import PublishIcon from "../../assets/Icons/publish.svg";
 import "../../styles/App.scss";
 import "./VideoUpload.scss";
 
@@ -23,7 +23,7 @@ const VideoUpload = () => {
             <UploadForm></UploadForm>
           </div>
         </div>
-        <div className="uploadForm__btn-wrapper-desktop">
+        {/* <div className="uploadForm__btn-wrapper-desktop">
           <Button
             icon={PublishIcon}
             text={"Publish"}
@@ -35,7 +35,7 @@ const VideoUpload = () => {
             className={"uploadForm__cancel-btn"}
             type={"reset"}
           ></TextButton>
-        </div>
+        </div> */}
       </div>
     </>
   );
