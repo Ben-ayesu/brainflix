@@ -3,7 +3,7 @@ import "../../styles/App.scss";
 
 const Button = ({ icon, text, className }) => {
   return (
-    <button className={className}>
+    <button type="submit" className={className}>
       <img src={icon} alt="Button Icon" className={`${className}__icon`} />
       <p className={`${className}__text`}>{text}</p>
     </button>
