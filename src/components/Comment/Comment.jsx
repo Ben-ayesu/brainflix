@@ -1,25 +1,18 @@
 import "./Comment.scss";
 import "../../styles/App.scss";
 
-const Comment = ({ id, avatar, name, timestamp, comment }) => {
-  // const dynamicStamp = (timestamp) => {
-  //   const dayNow = new Date(); // create today's day
-  //   const commentPosted = new Date(timestamp); // comment post date
-  //   const difference = dayNow - commentPosted);
-  //   return difference;
-  // };
-
+const Comment = ({ avatar, name, timestamp, comment }) => {
   return (
-    <li className="comment" key={id}>
+    <li className="comment">
       <div className="avatar-comments-basic">{avatar}</div>
-      <div class="comment__content">
-        <div class="comment__name-date">
-          <p class="comment__name">{name}</p>
-          <p class="comment__date">
+      <div className="comment__content">
+        <div className="comment__name-date">
+          <p className="comment__name">{name}</p>
+          <p className="comment__date">
             {new Date(timestamp).toLocaleDateString()}
           </p>
         </div>
-        <p class="comment__detail">{comment}</p>
+        <p className="comment__detail">{comment}</p>
       </div>
     </li>
   );

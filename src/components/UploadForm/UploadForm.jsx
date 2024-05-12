@@ -1,24 +1,27 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { Button, TextButton } from "../Button/Button";
 import PublishIcon from "../../assets/Icons/publish.svg";
 import "../../styles/App.scss";
 import "./UploadForm.scss";
-import { ToastContainer, toast } from "react-toastify";
 
 const UploadForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const navigate = useNavigate();
+  const [title, setTitle] = useState(""); // Store video title
+  const [description, setDescription] = useState(""); // Store video description
+  const navigate = useNavigate(); // To navigate
 
+  // Update title state
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
   };
 
+  // Update description state
   const handleChangeDescription = (event) => {
     setDescription(event.target.value);
   };
 
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -27,6 +30,7 @@ const UploadForm = () => {
       description: description.trim(),
     };
 
+    // Form validation
     if (uploadFormData.title === "" || uploadFormData.description === "") {
       toast("Please fill on both title and description");
     } else if (
@@ -36,22 +40,27 @@ const UploadForm = () => {
       toast("Please enter longer title or description");
     } else {
       toast("Video has has been uploaded", uploadFormData.title);
-      event.target.reset();
+      event.target.reset(); // Clear form
+      // Navigate home after 5 seconds
       setTimeout(() => {
         navigate("/");
       }, 5000);
     }
   };
 
+  // Handle cancel button
   const handleCancel = () => {
     setTitle("");
     setDescription("");
-    alert("Inputs cancelled");
+    toast("Inputs cancelled");
   };
 
   return (
+    // Upload form container
     <form className="uploadForm" onSubmit={handleSubmit}>
+      {/* Container for toasts */}
       <ToastContainer></ToastContainer>
+      {/* Title and Description input fields w/ label */}
       <label className="uploadForm__label" htmlFor="titleInput">
         Title your Video
       </label>
@@ -75,7 +84,9 @@ const UploadForm = () => {
         onChange={handleChangeDescription}
         value={description}
       />
+      {/* Line divider for desktop */}
       <div className="uploadForm__line-divider"></div>
+      {/* Button wrapper */}
       <div className="uploadForm__btn-wrapper">
         <Button
           icon={PublishIcon}

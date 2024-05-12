@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-player {
-  background-color: $secondary-brainflix-darkblack; // default background color
+  background-color: $secondary-brainflix-darkblack;
   // Video player
   &__media {
     position: relative;

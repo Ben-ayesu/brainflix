@@ -12,7 +12,7 @@ function App() {
         <Header></Header>
 
         <Routes>
-          {/* Home Page */}
+          {/* Home Page root "/" or /:id */}
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/:id" element={<Home></Home>}></Route>
           {/* Video Upload Page */}
