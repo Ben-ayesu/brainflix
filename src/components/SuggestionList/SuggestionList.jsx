@@ -11,15 +11,15 @@ const SuggestionList = ({ videos, selectVideoId }) => {
         .map((video) => (
           <li key={video.id}>
             <Link className="suggestion" to={`/${video.id}`}>
-            <img
-              src={video.image}
-              alt={video.title}
-              className="suggestion__img"
-            />
-            <div class="suggestion__content">
-              <p class="suggestion__title">{video.title}</p>
-              <p class="suggestion__channel">{video.channel}</p>
-            </div>
+              <img
+                src={video.image}
+                alt={video.title}
+                className="suggestion__img"
+              />
+              <div class="suggestion__content">
+                <p class="suggestion__title">{video.title}</p>
+                <p class="suggestion__channel">{video.channel}</p>
+              </div>
             </Link>
           </li>
         ))}

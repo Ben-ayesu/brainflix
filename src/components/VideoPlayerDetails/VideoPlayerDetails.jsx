@@ -2,8 +2,6 @@ import "./VideoPlayerDetails.scss";
 import "../../styles/App.scss";
 
 const VideoPlayerDetails = ({ selectVideo }) => {
-  console.log("video player details", selectVideo);
-
   return (
     <>
       {/* Video player content */}
