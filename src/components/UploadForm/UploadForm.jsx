@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Button, TextButton } from "../Button/Button";
@@ -11,6 +12,31 @@ const UploadForm = () => {
   const [description, setDescription] = useState(""); // Store video description
   const navigate = useNavigate(); // To navigate
 
+  const postVideo = async () => {
+    try {
+      const newVideo = {
+        title: title.trim(),
+        description: description.trim(),
+        image: "../../assets/Images/Upload-video-preview.jpg",
+        views: "0",
+        likes: "0",
+        duration: "0:00",
+        video: "https://example.com/video.mp4",
+        timestamp: Date.now(),
+        comments: [],
+      };
+
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/videos`,
+        newVideo
+      );
+      console.log("video uploaded successfully", response.data);
+    } catch (error) {
+      console.log("error uploading data", error);
+      toast.error("Please try again");
+    }
+  };
+
   // Update title state
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -22,7 +48,7 @@ const UploadForm = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const uploadFormData = {
@@ -40,7 +66,9 @@ const UploadForm = () => {
       toast("Please enter longer title or description");
     } else {
       toast("Video has has been uploaded", uploadFormData.title);
+      postVideo();
       event.target.reset(); // Clear form
+
       // Navigate home after 5 seconds
       setTimeout(() => {
         navigate("/");
@@ -53,6 +81,10 @@ const UploadForm = () => {
     setTitle("");
     setDescription("");
     toast("Inputs cancelled");
+    // Navigate home after 5 seconds
+    setTimeout(() => {
+      navigate("/");
+    }, 5000);
   };
 
   return (

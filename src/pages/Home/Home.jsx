@@ -21,6 +21,7 @@ const Home = () => {
         const response = await axios.get(
           `${process.env.REACT_APP_API_URL}/videos`
         );
+        console.log("this is the repsonse", response.data);
         setVideos(response.data); // sets videos to array of video
       } catch (error) {
         console.log("Could not fetch data", error);
