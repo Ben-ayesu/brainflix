@@ -39,6 +39,7 @@
     height: auto;
     overflow: auto;
     border-radius: 0.25rem;
+    background-color: $secondary-mercury;
     @include tablet {
       max-width: 25%;
     }

@@ -26,12 +26,11 @@
       flex-direction: row;
       padding-top: 0.5rem;
       padding-bottom: $default-padding;
-      border-bottom: 1px solid $secondary-mercury;
     }
   }
   &__tb-wrapper {
     width: 100%;
-    flex: 1;
+    flex: 1.25;
   }
   &__form-container {
     display: flex;
@@ -43,11 +42,8 @@
   }
   &__title {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: $primary-silver;
-    @include desktop {
-      width: fit-content;
-    }
   }
   &__thumbnail {
     margin-bottom: 1rem;

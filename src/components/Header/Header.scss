@@ -16,13 +16,11 @@
     margin: 1rem auto;
   }
 
-  // Header Image
   &__img {
     max-height: 1.5625rem;
     max-width: 7.5rem;
   }
 
-  // Header Input
   &__input {
     width: 100%;
     background-image: url("../../assets/Icons/search.svg");
@@ -35,7 +33,8 @@
     border-radius: 4px;
     margin-right: 1rem;
     @include tablet {
-      width: 66%;
+      width: 300px;
+      margin-right: 0;
     }
     @include desktop {
       width: 41%;
@@ -59,7 +58,6 @@
     }
   }
 
-  // Header Avatar
   &__avatar {
     border-radius: 50%;
     width: 2.25rem;
@@ -69,7 +67,6 @@
     }
   }
 
-  // Header Avatar Tablet
   &__avatar-tablet {
     display: none;
     border-radius: 50%;

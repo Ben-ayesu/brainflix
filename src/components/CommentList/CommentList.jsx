@@ -1,6 +1,6 @@
+import Comment from "../Comment/Comment";
 import "./CommentList.scss";
 import "../../styles/App.scss";
-import Comment from "../Comment/Comment";
 
 const CommentList = ({ selectVideo, avatar }) => {
   return (
@@ -8,6 +8,7 @@ const CommentList = ({ selectVideo, avatar }) => {
       {selectVideo.comments?.map((comment) => (
         <Comment
           id={comment.id}
+          key={comment.id}
           avatar={avatar}
           name={comment.name}
           timestamp={comment.timestamp}
