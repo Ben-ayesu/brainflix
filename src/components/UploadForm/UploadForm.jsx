@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Button, TextButton } from "../Button/Button";
@@ -21,30 +22,51 @@ const UploadForm = () => {
     setDescription(event.target.value);
   };
 
+  // Form validation logic
+  const isFormValid = () => {
+    // Form validation
+    if (title === "" || description === "") {
+      toast("Please fill on both title and description");
+      return false;
+    } else if (title.length < 3 || description.length < 10) {
+      toast(
+        "Please enter title longer than 3 characters and description longer than 10 characters"
+      );
+      return false;
+    }
+    return true;
+  };
+
+  // Post video to server
+  const postVideo = async (newVideo) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/videos`,
+        newVideo
+      );
+      console.log("video uploaded successfully", response.data);
+      toast("Video has been uploaded");
+      // Navigate home after 3 seconds for visual feedback
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      console.log("error uploading data", error);
+      toast.error("Error uploading video. Please try again");
+    }
+  };
+
   // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const uploadFormData = {
+    const newVideo = {
       title: title.trim(),
       description: description.trim(),
     };
 
-    // Form validation
-    if (uploadFormData.title === "" || uploadFormData.description === "") {
-      toast("Please fill on both title and description");
-    } else if (
-      uploadFormData.title.length < 3 ||
-      uploadFormData.description.length < 5
-    ) {
-      toast("Please enter longer title or description");
-    } else {
-      toast("Video has has been uploaded", uploadFormData.title);
-      event.target.reset(); // Clear form
-      // Navigate home after 5 seconds
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
+    if (isFormValid()) {
+      postVideo(newVideo);
     }
   };
 
@@ -53,6 +75,10 @@ const UploadForm = () => {
     setTitle("");
     setDescription("");
     toast("Inputs cancelled");
+    // Navigate home after 3 seconds for visual feedback
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
   };
 
   return (

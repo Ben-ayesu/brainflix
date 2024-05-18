@@ -22,7 +22,7 @@ const CommentsForm = ({ selectVideo }) => {
     if (comment.trim() === "") {
       toast("Please enter a valid comment"); // Empty comment check
     } else if (comment.length < 3) {
-      toast("Please enter a longer comment"); // Minimum length check
+      toast("Please enter a longer comment more than 3 characters"); // Minimum length check
     } else {
       toast(`your new comment: ${comment}`); // Toast to confirm comment is added
     }

@@ -8,23 +8,18 @@ import SuggestionList from "../../components/SuggestionList/SuggestionList";
 import "../../styles/App.scss";
 
 const Home = () => {
-  // Api config
-  const api_key = "c7e3d896-5e28-4e21-97db-4c461e74097a";
-  const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-  
-  // Variable state
   const [videos, setVideos] = useState([]); // store videos for side videos
   const [selectVideo, setSelectedVideo] = useState({}); // store for main video detail
-  const { id } = useParams(); // get video id from url param
+  const { id } = useParams();
 
   // Fetch all videos on initial render
   useEffect(() => {
     const getVideos = async () => {
       try {
-        const getVideos = await axios.get(
-          `${baseUrl}videos?api_key=${api_key}`
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/videos`
         );
-        setVideos(getVideos.data); // sets videos to array of video
+        setVideos(response.data); // sets videos to array of video
       } catch (error) {
         console.log("Could not fetch data", error);
       }
@@ -32,12 +27,12 @@ const Home = () => {
     getVideos();
   }, []);
 
-  // Fetch selected video 
+  // Fetch selected video
   useEffect(() => {
     const getSingleVideo = async (id) => {
       try {
         const getVideo = await axios.get(
-          `${baseUrl}videos/${id}?api_key=${api_key}`
+          `${process.env.REACT_APP_API_URL}/videos/${id}`
         );
         setSelectedVideo(getVideo.data);
       } catch (error) {

@@ -4,12 +4,18 @@
 .videoUpload-page {
   display: flex;
   flex-direction: column;
-  padding-top: $default-padding;
   margin: 0 $default-padding;
-  border-top: 1px solid $secondary-mercury;
+  @include tablet {
+    margin-top: 1rem;
+  }
   @include desktop {
     width: 1280px;
     margin: 0 auto;
+  }
+  &__divider {
+    width: 150%;
+    height: 1px;
+    background-color: #e1e1e1;
   }
   &__header {
     margin: 1rem 0;
@@ -18,10 +24,14 @@
       padding-bottom: 1.5rem;
       border-bottom: 1px solid $secondary-mercury;
     }
+    @include desktop {
+      padding-top: 1.5rem;
+    }
   }
   &__container {
     display: flex;
     flex-direction: column;
+    margin-top: $default-padding;
     @include desktop {
       flex-direction: row;
       padding-top: 0.5rem;
