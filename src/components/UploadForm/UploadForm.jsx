@@ -12,31 +12,6 @@ const UploadForm = () => {
   const [description, setDescription] = useState(""); // Store video description
   const navigate = useNavigate(); // To navigate
 
-  const postVideo = async () => {
-    try {
-      const newVideo = {
-        title: title.trim(),
-        description: description.trim(),
-        image: "../../assets/Images/Upload-video-preview.jpg",
-        views: "0",
-        likes: "0",
-        duration: "0:00",
-        video: "https://example.com/video.mp4",
-        timestamp: Date.now(),
-        comments: [],
-      };
-
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/videos`,
-        newVideo
-      );
-      console.log("video uploaded successfully", response.data);
-    } catch (error) {
-      console.log("error uploading data", error);
-      toast.error("Please try again");
-    }
-  };
-
   // Update title state
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -47,32 +22,51 @@ const UploadForm = () => {
     setDescription(event.target.value);
   };
 
+  // Form validation logic
+  const isFormValid = () => {
+    // Form validation
+    if (title === "" || description === "") {
+      toast("Please fill on both title and description");
+      return false;
+    } else if (title.length < 3 || description.length < 10) {
+      toast(
+        "Please enter title longer than 3 characters and description longer than 10 characters"
+      );
+      return false;
+    }
+    return true;
+  };
+
+  // Post video to server
+  const postVideo = async (newVideo) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/videos`,
+        newVideo
+      );
+      console.log("video uploaded successfully", response.data);
+      toast("Video has been uploaded");
+      // Navigate home after 3 seconds for visual feedback
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      console.log("error uploading data", error);
+      toast.error("Error uploading video. Please try again");
+    }
+  };
+
   // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const uploadFormData = {
+    const newVideo = {
       title: title.trim(),
       description: description.trim(),
     };
 
-    // Form validation
-    if (uploadFormData.title === "" || uploadFormData.description === "") {
-      toast("Please fill on both title and description");
-    } else if (
-      uploadFormData.title.length < 3 ||
-      uploadFormData.description.length < 5
-    ) {
-      toast("Please enter longer title or description");
-    } else {
-      toast("Video has has been uploaded", uploadFormData.title);
-      postVideo();
-      event.target.reset(); // Clear form
-
-      // Navigate home after 5 seconds
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
+    if (isFormValid()) {
+      postVideo(newVideo);
     }
   };
 
@@ -81,10 +75,10 @@ const UploadForm = () => {
     setTitle("");
     setDescription("");
     toast("Inputs cancelled");
-    // Navigate home after 5 seconds
+    // Navigate home after 3 seconds for visual feedback
     setTimeout(() => {
       navigate("/");
-    }, 5000);
+    }, 3000);
   };
 
   return (

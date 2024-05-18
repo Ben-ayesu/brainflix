@@ -15,13 +15,10 @@ const Home = () => {
   // Fetch all videos on initial render
   useEffect(() => {
     const getVideos = async () => {
-      console.log("hello from home", process.env.REACT_APP_API_URL); // Log before making the request
-
       try {
         const response = await axios.get(
           `${process.env.REACT_APP_API_URL}/videos`
         );
-        console.log("this is the repsonse", response.data);
         setVideos(response.data); // sets videos to array of video
       } catch (error) {
         console.log("Could not fetch data", error);
@@ -45,7 +42,6 @@ const Home = () => {
 
     // get id if exist others set default
     if (id) {
-      console.log(id);
       getSingleVideo(id);
     } else {
       getSingleVideo("84e96018-4022-434e-80bf-000ce4cd12b8");

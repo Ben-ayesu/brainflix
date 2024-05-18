@@ -7,6 +7,7 @@ const VideoUpload = () => {
   return (
     <>
       {/* Main container for video upload page */}
+      <div className="videoUpload-page__divider"></div>
       <div className="videoUpload-page">
         <h1 className="videoUpload-page__header">Upload Video</h1>
         {/* Container for thumbnail and upload form */}
